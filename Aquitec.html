@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Prueba</title>
+    <style>
+    	*{
+    		margin:0px;
+    		padding:0px;
+    	}
+    	body{
+    		background-image: url(http://www.hdfondos.eu/preview/get_photo/141116/3840/2160);
+    		background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-attachment: fixed;
+			
+    	}
+    	.menu {
+	    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 21;
+    right: 1%;
+}
+.menu span {
+	position: relative;
+	margin-top: 9px;
+	margin-bottom: 9px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -15px;
+	margin-top: -1.5px;
+}
+.menu span, .menu span::before, .menu span::after {
+	display: block;
+	
+		width: 26px;
+	right: 0;
+	height: 3px;
+	background-color: white;
+	outline: 1px solid transparent;
+	-webkit-transition-property: background-color, -webkit-transform;
+	-moz-transition-property: background-color, -moz-transform;
+	-o-transition-property: background-color, -o-transform;
+	transition-property: background-color, transform;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+.menu span::before, .menu span::after {
+	position: absolute;
+	content: "";
+}
+.menu span::before {
+	top: -9px;
+	 width:20px
+}
+.menu span::after {
+	top: 9px;width: 33px;
+
+}
+.menu.clicked span {
+	background-color: transparent;
+}
+.menu.clicked span::before {
+	-webkit-transform: translateY(9px) rotate(45deg);
+	-moz-transform: translateY(9px) rotate(45deg);
+	-ms-transform: translateY(9px) rotate(45deg);
+	-o-transform: translateY(9px) rotate(45deg);
+	transform: translateY(9px) rotate(45deg);    width: 33px;
+}
+.menu.clicked span::after {
+	-webkit-transform: translateY(-9px) rotate(-45deg);
+	-moz-transform: translateY(-9px) rotate(-45deg);
+	-ms-transform: translateY(-9px) rotate(-45deg);
+	-o-transform: translateY(-9px) rotate(-45deg);
+	transform: translateY(-9px) rotate(-45deg);
+}
+.menu.clicked span:before, .menu.clicked span:after {
+	background-color: #ffffff;
+}
+.menu:hover {
+	cursor: pointer;
+}
+/*  NAV
+========================================== */
+
+#nav {
+	background: #211316;
+	position: fixed;
+	z-index: 20;
+	top: 0;
+	right: 0;
+	height: 100%;
+	max-width: 250px;
+	width: 100%;
+	padding: 100px 40px 60px 40px;
+	overflow-y: auto;
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	-o-transform: translateX(100%);
+	transform: translateX(100%);
+	-webkit-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	-moz-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	-o-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+#nav.show {
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	-o-transform: translateX(0px);
+	transform: translateX(0px);
+}
+#nav.show ul.main li {
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	-o-transform: translateX(0px);
+	transform: translateX(0px);
+	opacity: 1;
+}
+.menu.clicked {
+    position: fixed;
+    z-index: 99;
+}
+#nav.show ul.main li:nth-child(1) {
+	transition-delay: 0.15s;
+}
+#nav.show ul.main li:nth-child(2) {
+	transition-delay: 0.3s;
+}
+#nav.show ul.main li:nth-child(3) {
+	transition-delay: 0.45s;
+}
+#nav.show ul.main li:nth-child(4) {
+	transition-delay: 0.6s;
+}
+#nav.show ul.main li:nth-child(5) {
+	transition-delay: 0.75s;
+}
+#nav.show ul.main li:nth-child(6) {
+	transition-delay: 0.9s;
+}
+#nav.show ul.main li:nth-child(7) {
+	transition-delay: 1.05s;
+}
+#nav.show ul.main li:nth-child(8) {
+	transition-delay: 1.2s;
+}
+#nav.show ul.main li:nth-child(9) {
+	transition-delay: 1.35s;
+}
+#nav.show .about, #nav.show .social, #nav.show ul.sub {
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	-o-transform: translateY(0px);
+	transform: translateY(0px);
+	opacity: 1;
+	transition-delay: .85s;
+}
+
+@media (min-width: 667px) {
+#nav {
+	padding: 120px 30px 70px 20px;
+}
+}
+#nav ul.main {
+	list-style-type: none;
+}
+#nav ul.main li {
+	-webkit-transform: translateX(40px);
+	-moz-transform: translateX(40px);
+	-ms-transform: translateX(40px);
+	-o-transform: translateX(40px);
+	transform: translateX(40px);
+	opacity: 0;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	float: none;
+	    list-style: circle;
+    color: #fff
+}
+#nav ul.main li:last-of-type {
+	margin-bottom: 0px;
+}
+#nav ul.main li a {
+	color: #ffffff;
+	
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1rem;
+	display: block;
+	padding: 10px 0;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+#nav ul.main li a span {
+	color: #b7ac7f;
+}
+#nav ul.main li a:hover {
+	color: #b7ac7f;
+}
+#nav ul.sub {
+	list-style-type: none;
+	margin-top: 40px;
+	-webkit-transform: translateY(30px);
+	-moz-transform: translateY(30px);
+	-ms-transform: translateY(30px);
+	-o-transform: translateY(30px);
+	transform: translateY(30px);
+	opacity: 0;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#nav ul.sub li {
+	margin-bottom: 10px;
+}
+#nav ul.sub li:last-of-type {
+	margin-bottom: 0px;
+}
+#nav ul.sub li a {
+	color: #ffffff;
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 1px;
+	font-size: 0.9rem;
+	text-decoration: none;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+#nav ul.sub li a:hover {
+	color: #b7ac7f;
+}
+.menu:hover span{}
+
+/*  OVERLAY
+========================================== */
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 7;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-color: #603e82;
+	opacity: 0;
+	visibility: hidden;
+}
+.overlay.show {
+	opacity: 0.8;
+	visibility: visible;
+}
+#contacto{
+  background-color: #000000a3;
+  letter-spacing: 2px;
+  }
+#contacto a{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+@media (max-width: 575.98px) {
+
+  #contacto{padding-bottom: 800px;}
+  #contacto .maps iframe{
+    width: 100%;
+    height: 450px;
+  }
+ }
+
+
+@media (min-width: 576px) {
+
+   #contacto{padding-bottom: 800px;}
+
+   #contacto .maps iframe{
+     width: 100%;
+     height: 450px;
+   }
+ }
+
+@media (min-width: 768px) {
+
+  #contacto{padding-bottom: 350px;}
+
+  #contacto .maps iframe{
+    width: 100%;
+    height: 850px;
+  }
+}
+
+@media (min-width: 992px) {
+  #contacto{padding-bottom: 200px;}
+
+   #contacto .maps iframe{
+     width: 100%;
+     height: 700px;
+   }
+}
+
+
+#author a{
+  color: #fff;
+  text-decoration: none;
+    
+}
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.card-header{
+	background-color:#000000a3;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+    </style>
+  </head>
+  <body>
+  	<div class="menu"> <span></span></div>
+	<nav id="nav">
+			<ul class="main">
+					<li style="list-style:none;"><a href="#" class="btnMenuInicio">Inicio</a></li>
+					<li style="list-style:none;"><a href="#" class="btnMenuArquitectura">Arquitectura</a></li>
+					<li style="list-style:none;"><a href="#" class="btnMenuCasa">Casa</a></li>
+					<li style="list-style:none;"><a href="#" class="btnMenuMobiliario">Mobiliario</a></li>
+					<li style="list-style:none;"><a href="#" class="btnMenuNosotros">Nosotros</a></li>
+					<li style="list-style:none;"><a href="#" class="btnMenuContacto">Contactos</a></li>
+			</ul>
+			<div>
+				<!--Facebook-->
+				<a class="fb-ic mr-3" role="button"><i class="fab fa-lg fa-facebook-f"></i></a>
+				<!--Twitter-->
+				<a class="tw-ic mr-3" role="button"><i class="fab fa-lg fa-twitter"></i></a>
+				<!--Google +-->
+				<a class="gplus-ic mr-3" role="button"><i class="fab fa-lg fa-google-plus-g"></i></a>
+				<!--Linkedin-->
+				<a class="li-ic mr-3" role="button"><i class="fab fa-lg fa-linkedin-in"></i></a>
+				<!--Instagram-->
+				<a class="ins-ic mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+			</div>
+	</nav>
+	<div class="overlay"></div>
+	<div>
+<section id="idInicio" class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark" style="height:100vh; background-size: cover; background-image: url(https://www.coachingarquitectos.com/wp-content/uploads/2019/06/render-en-arquitectura.jpg);">
+  
+   <div class="container-fluid">
+      <div class="row  justify-content-center align-items-center d-flex text-center h-100">
+        <div class="col-12 col-md-8  h-50 ">
+            <h1 class="text-light mb-2 mt-5"><strong>ARQUITECTURA</strong> </h1>
+            <p class="lead  text-light mb-5">Construyendo Sueños</p>
+			<p><a href="#" class="btn bg-danger shadow-lg btn-round text-light btn-lg btn-rised">Conocenos ></a></p>  
+        </div>
+      </div>
+    </div>
+    </section>
+			<div class="container" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+				<div class="tabs-lg-alternate card-header">
+					<ul class="nav nav-justified">
+						<li class="nav-item">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="idArquitectura">
+										<h1 class="text-light">Arquitectura</h1>
+										<p class="lead  text-light mb-5">Te contamos la mejor arquitectura planetaria, los proyectos nuevos, los experimentales, el talento de sus autores y todos los hitos que provocan cambios y que nos hacen ver las cosas (y vivirlas) de otra manera.</p>
+										<div class="row">
+											<div class="col-md-2"></div>
+											<div class="col-md-8"><img style="width:100%" src="https://www.arquitecturaydiseno.es/medio/2019/12/18/cabina-con-techo-descubierto_5e5bb1cb_1160x774.jpg"></div>
+										</div>
+									</div>
+									<!--<div class="row">
+									   <div class="col-md-4">Hola</div>
+                                       <div class="col-md-4"><img src="https://www.arquitecturaydiseno.es/medio/2019/12/30/frente-de-armarios-con-carpinteria-a-medida-y-detalles-circulares-para-asiento-y-zona-de-trabajo_03f53292_1500x930.jpg"></div>
+                                       <div class="col-md-4">hola</div>
+                                   </div>-->
+
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="container" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+				<div class="tabs-lg-alternate card-header">
+					<ul class="nav nav-justified">
+						<li class="nav-item">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="idCasa">
+										<h1 class="text-light">Casas</h1>
+										<p class="lead  text-light mb-5">Casas prefabricadas, en el campo, en medio de la ciudad… Te contamos los mejores proyectos fruto de un ejercicio magistral de diseño. De gran escala y de pocos metros, con estilos y soluciones diferentes para inspirarte, divertirte, informarte. 
+										</p>
+										<div class="row">
+											<div class="col-md-2"></div>
+											<div class="col-md-8"><img style="width:100%" src="https://www.arquitecturaydiseno.es/medio/2019/12/30/frente-de-armarios-con-carpinteria-a-medida-y-detalles-circulares-para-asiento-y-zona-de-trabajo_03f53292_1500x930.jpg"></div>
+										</div>
+									</div>
+									<!--<div class="row">
+									   <div class="col-md-4">Hola</div>
+                                       <div class="col-md-4"><img src="https://www.arquitecturaydiseno.es/medio/2019/12/30/frente-de-armarios-con-carpinteria-a-medida-y-detalles-circulares-para-asiento-y-zona-de-trabajo_03f53292_1500x930.jpg"></div>
+                                       <div class="col-md-4">hola</div>
+                                   </div>-->
+
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="container" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+				<div class="tabs-lg-alternate card-header">
+					<ul class="nav nav-justified">
+						<li class="nav-item">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="idMobiliario">
+										<h1 class="text-light">Mobiliario</h1>
+										<p class="lead  text-light mb-5">Los mejores diseños para el baño, la cocina, para el salón, el jardín, el dormitorio, el comedor… Si tienes un espacio en blanco y necesitas ideas expertas para no equivocarte al amueblarlo, si eres profesional y buscas algo concreto o eres un amante del buen diseño y quieres encontrar las piezas que necesita tu casa, esta es tu página.
+										</p>
+										<div class="row">
+											<div class="col-md-2"></div>
+											<div class="col-md-8"><img style="width:100%" src="https://www.arquitecturaydiseno.es/medio/2020/01/03/decoracion-3-unidades-tonad_5ec5482c_1000x749.jpeg"></div>
+										</div>
+									</div>
+									<!--<div class="row">
+									   <div class="col-md-4">Hola</div>
+                                       <div class="col-md-4"><img src="https://www.arquitecturaydiseno.es/medio/2019/12/30/frente-de-armarios-con-carpinteria-a-medida-y-detalles-circulares-para-asiento-y-zona-de-trabajo_03f53292_1500x930.jpg"></div>
+                                       <div class="col-md-4">hola</div>
+                                   </div>-->
+
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="container" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" id="idEquipo">
+				<div class="tabs-lg-alternate card-header">
+					<ul class="nav nav-justified">
+						<li class="nav-item">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<section id="team" class="pb-5">
+    <div class="container">
+        <h1 class="text-light">Equipo</h5>
+        <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4"  data-aos="zoom-in">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
+                                    <h4 class="card-title">Programador 1</h4>
+                                    <p class="card-text">Descripción del programador 1</p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Programador</h4>
+                                    <p class="card-text">Un programador es aquella persona que elabora programas de computadora. ​, es decir escribe, depura y mantiene el código fuente de un programa informático, que ejecuta el hardware de una computadora, para realizar una tarea determinada. ... En muchos países, un programador es también una categoría profesional reconocida.</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4"  data-aos="zoom-in">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png" alt="card image"></p>
+                                    <h4 class="card-title">Programador 2</h4>
+                                    <p class="card-text">Descripción del programador 2.</p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Programador</h4>
+                                    <p class="card-text">Un programador es aquella persona que elabora programas de computadora. ​, es decir escribe, depura y mantiene el código fuente de un programa informático, que ejecuta el hardware de una computadora, para realizar una tarea determinada. ... En muchos países, un programador es también una categoría profesional reconocida.</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4"  data-aos="zoom-in">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_03.png" alt="card image"></p>
+                                    <h4 class="card-title">Programador 3</h4>
+                                    <p class="card-text">Descripción del Porgramador 3</p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Programador</h4>
+                                    <p class="card-text">Un programador es aquella persona que elabora programas de computadora. ​, es decir escribe, depura y mantiene el código fuente de un programa informático, que ejecuta el hardware de una computadora, para realizar una tarea determinada. ... En muchos países, un programador es también una categoría profesional reconocida.</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+        </div>
+        <div class="row">
+        	<div class="col-md-12" data-aos="fade-left">            
+			   	<div class="card mb-3">
+				  <div class="row no-gutters">
+				    <div class="col-md-4">
+				      <img src="https://miro.medium.com/max/11520/1*W7MH01E2FBgpNNIYRV2iIA.jpeg" class="card-img" alt="...">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body">
+				        <h5 class="card-title">Estrategia</h5>
+				        <p class="card-text">Consiste en destacar en pantalla aquellos elementos que aportan las claves de la narrativa; las estrategias de memorización se prestan a que cada uno invente las suyas propias; nuestra estrategia ha sido tomar la iniciativa del juego desde el comienzo del partido.</p>
+				        <p class="card-text"><small class="text-muted">Las tácticas sin estrategia son el ruido antes de la derrota.</small></p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+        	</div>
+           	<div class="col-md-12" data-aos="fade-left">
+				<div class="card mb-3">
+				  <div class="row no-gutters">
+				    <div class="col-md-4">
+				      <img src="https://image.shutterstock.com/image-illustration/arrow-points-spanish-word-mision-260nw-619901102.jpg" class="card-img" alt="...">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body">
+				        <h5 class="card-title">Misión</h5>
+				        <p class="card-text">es el motivo por el que existe dicha empresa, su razón de ser. Indica la actividad que realiza la empresa.</p>
+				        <p class="card-text"><small class="text-muted">Si todos soñamos lo mismo, podemos hacer realidad misiones imposibles.</small></p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+           	</div>
+           <div class="col-md-12" data-aos="fade-left">
+			<div class="card mb-3">
+			  <div class="row no-gutters">
+			    <div class="col-md-4">
+			      <img src="https://blogs.iadb.org/conocimiento-abierto/wp-content/uploads/sites/10/2017/04/Intercambio-de-Conocimiento-banner.jpg" class="card-img" alt="...">
+			    </div>
+			    <div class="col-md-8">
+			      <div class="card-body">
+			        <h5 class="card-title">Experiencia</h5>
+			        <p class="card-text">La definición de mayor alcance del concepto de cultura engloba todas las actividades realizadas por los seres humanos.</p>
+			        <p class="card-text"><small class="text-muted">Hay algo más importante que la lógica: la imaginación</small></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+           </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-5">
+
+        </div>
+    </div>
+</section>
+									</div>
+
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+				<div class="tabs-lg-alternate card-header">
+					<ul class="nav nav-justified">
+						<li class="nav-item">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+										<div class="row" id="contacto">
+<div class="container mt-5" id="idContactos">
+
+    <div class="row" style="height:550px;">
+      <div class="col-md-6 maps" >
+         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13138.608906831589!2d-58.3673036!3d-34.5876653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x713120713e70bc3!2sEdificio%20Libertad!5e0!3m2!1ses!2sar!4v1578610550304!5m2!1ses!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+      <div class="col-md-6">
+        <h2 class="text-uppercase mt-3 font-weight-bold text-white">Contactos</h2>
+        <form action="">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input type="text" class="form-control mt-2" placeholder="Nombre" required>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input type="text" class="form-control mt-2" placeholder="Apellido" required>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input type="email" class="form-control mt-2" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input type="number" class="form-control mt-2" placeholder="Telefono" required>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <textarea class="form-control" placeholder="Ingrese Consulta" rows="3" required></textarea>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-light" type="submit">Consular</button>
+            </div>
+          </div>
+        </form>
+        <div class="text-white">
+        <h2 class="text-uppercase mt-4 font-weight-bold">Donde estamos</h2>
+
+        <i class="fas fa-phone mt-3"></i> <a href="tel:+">(+54) 123456</a><br>
+        <i class="fas fa-phone mt-3"></i> <a href="tel:+">(+54) 123456</a><br>
+        <i class="fa fa-envelope mt-3"></i> <a href="">info@test.ar</a><br>
+        <i class="fas fa-globe mt-3"></i> Dirección, Nro, Localidad, Pais<br>
+        <div class="my-4">
+        <a href=""><i class="fab fa-facebook fa-3x pr-4"></i></a>
+        <a href=""><i class="fab fa-linkedin fa-3x"></i></a>
+        </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+</div>
+
+									</div>
+									<!--<div class="row">
+									   <div class="col-md-4">Hola</div>
+                                       <div class="col-md-4"><img src="https://www.arquitecturaydiseno.es/medio/2019/12/30/frente-de-armarios-con-carpinteria-a-medida-y-detalles-circulares-para-asiento-y-zona-de-trabajo_03f53292_1500x930.jpg"></div>
+                                       <div class="col-md-4">hola</div>
+                                   </div>-->
+
+						</li>
+					</ul>
+				</div>
+			</div>
+
+	</div>
+  	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".btnMenuInicio").click(function () {
+				$('html, body').animate({
+					scrollTop: $("#idInicio").offset().top
+				}, 2000);
+			});
+			$(".btnMenuArquitectura").click(function () {
+				$('html, body').animate({
+					scrollTop: $("#idArquitectura").offset().top
+				}, 2000);
+			});
+			$(".btnMenuCasa").click(function () {
+				$('html, body').animate({
+					scrollTop: $("#idCasa").offset().top
+				}, 2000);
+			});
+			$(".btnMenuNosotros").click(function () {
+				$('html, body').animate({
+					scrollTop: $("#idEquipo").offset().top
+				}, 2000);
+			});
+			$(".btnMenuContacto").click(function () {
+				$('html, body').animate({
+					scrollTop: $("#idContactos").offset().top
+				}, 2000);
+			});
+			$(".btnMenuMobiliario").click(function () {
+				$('html, body').animate({
+					scrollTop: $("#idMobiliario").offset().top
+				}, 2000);
+			});
+			
+		});
+			AOS.init();
+		$('.menu, .overlay').click(function () {
+			$('.menu').toggleClass('clicked');
+			
+			$('#nav').toggleClass('show');
+			
+		});
+	</script>
+  </body>
+</html>
